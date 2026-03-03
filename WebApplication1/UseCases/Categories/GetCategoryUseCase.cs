@@ -14,6 +14,13 @@ namespace WebApplication1.UseCases.Categories
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Obter os detalhes de uma categoria específica.
+         * 
+         * @param id: O identificador único da categoria a ser obtida.
+         * @return: Um objeto CategoryResponse contendo os detalhes da categoria.
+         * @throws InputException: Lançada quando a categoria com o ID fornecido não é encontrada.
+        */
         public async Task<CategoryResponse> Execute(Guid id)
         {
             var validation = new ValidationResult();

@@ -26,6 +26,13 @@ namespace WebApplication1.UseCases.Transactions
             _repositoryPerson = repositoryPerson;
         }
 
+        /* 
+         * Objetivo: Criar uma nova transação financeira, associando-a a uma categoria e a uma pessoa.
+         * 
+         * @param req: Objeto contendo os dados necessários para criar a transação, incluindo descrição, valor, tipo, ID da categoria e ID da pessoa.
+         * @return: Um objeto TransactionResponse contendo os detalhes da transação criada, incluindo a categoria e a pessoa associadas.
+         * @throws InputException: Lançada quando os dados de entrada são inválidos, como descrição vazia, valor não positivo, tipo de transação inválido, categoria ou pessoa inexistente, ou quando as regras de associação entre tipo de transação e categoria ou pessoa não são respeitadas (ex: menores de idade só podem registrar despesas).
+         */
         public async Task<TransactionResponse> Execute(TransactionSaveRequest req)
         {
             var validation = new ValidationResult();

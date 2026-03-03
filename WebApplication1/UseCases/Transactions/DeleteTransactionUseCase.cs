@@ -13,6 +13,12 @@ namespace WebApplication1.UseCases.Transactions
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Excluir uma transação existente.
+         * 
+         * @param id: Identificador único da transação a ser excluída.
+         * @throws InputException: Lançada quando a transação não é encontrada para exclusão.
+        */
         public async Task Execute(Guid id)
         {
             var validation = new ValidationResult();

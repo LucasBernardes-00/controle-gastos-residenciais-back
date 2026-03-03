@@ -33,6 +33,7 @@ namespace WebApplication1.Controllers
             _reportTransaction = reportTransaction;
         }
 
+        // Método para criar uma nova categoria
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategorySaveRequest category)
         {
@@ -41,6 +42,7 @@ namespace WebApplication1.Controllers
             return Created(string.Empty, response);
         }
 
+        ´// Método para obter todas as categorias
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -48,6 +50,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        // Método para obter uma categoria por ID
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
@@ -55,6 +58,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        ´// Método para atualizar uma categoria existente
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] CategoryUpdateRequest request)
         {
@@ -62,6 +66,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        // Método para excluir uma categoria por ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
@@ -69,6 +74,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        // Método para obter o relatório de transações por categoria
         [HttpGet("report-transaction")]
         public async Task<IActionResult> GetReportTransaction()
         {

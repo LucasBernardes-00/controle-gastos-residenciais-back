@@ -16,6 +16,14 @@ namespace WebApplication1.UseCases.Categories
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Atualizar os detalhes de uma categoria existente.
+         * 
+         * @param id: O identificador único da categoria a ser atualizada.
+         * @param category: Objeto contendo a nova descrição e finalidade da categoria.
+         * @return: Retorna um objeto contendo o ID, descrição e finalidade da categoria atualizada.
+         * @throws InputException: Lançada quando a categoria com o ID fornecido não é encontrada, ou quando a descrição é vazia ou nula, ou quando a finalidade é inválida.
+        */
         public async Task<CategoryResponse> Execute(Guid id, CategoryUpdateRequest category)
         {
             var validation = new ValidationResult();

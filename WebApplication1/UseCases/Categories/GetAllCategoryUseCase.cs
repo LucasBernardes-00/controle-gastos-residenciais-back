@@ -12,6 +12,9 @@ namespace WebApplication1.UseCases.Categories
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Obter todas as categorias existentes.
+        */
         public async Task<List<CategoryResponse>> Execute()
         {
             var category = await _repository.GetAll();

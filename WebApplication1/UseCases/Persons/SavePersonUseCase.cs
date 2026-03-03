@@ -16,6 +16,13 @@ namespace WebApplication1.UseCases.Persons
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Salvar uma nova pessoa no sistema, garantindo que os dados fornecidos sejam válidos.
+         * 
+         * @param req: Um objeto PersonSaveRequest contendo os detalhes da pessoa a ser salva, como nome e data de nascimento.
+         * @return: Um objeto PersonResponse contendo os detalhes da pessoa salva, incluindo seu identificador único.
+         * @throws InputException: Lançada quando os dados fornecidos para salvar a pessoa são inválidos, como nome vazio ou data de nascimento ausente.
+        */
         public async Task<PersonResponse> Execute(PersonSaveRequest req)
         {
             var validation = new ValidationResult();

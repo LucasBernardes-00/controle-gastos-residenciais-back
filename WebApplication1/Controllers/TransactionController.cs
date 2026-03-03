@@ -29,6 +29,7 @@ namespace WebApplication1.Controllers
             _get = get;
         }
 
+        // Método para criar uma nova transação
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] TransactionSaveRequest request)
         {
@@ -37,6 +38,7 @@ namespace WebApplication1.Controllers
             return Created(string.Empty, response);
         }
 
+        // Método para obter todas as transações
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -44,6 +46,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        // Método para obter uma transação por ID
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -51,6 +54,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        // Método para atualizar uma transação existente
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] TransactionUpdateRequest request)
         {
@@ -58,6 +62,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        // Método para excluir uma transação por ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {

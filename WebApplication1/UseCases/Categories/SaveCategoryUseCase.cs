@@ -17,6 +17,13 @@ namespace WebApplication1.UseCases.Categories
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Criar uma nova categoria.
+         * 
+         * @param category: Objeto contendo a descrição e a finalidade da categoria a ser criada.
+         * @return: Retorna um objeto contendo o ID, descrição e finalidade da categoria criada.
+         * @throws InputException: Lançada quando a descrição é vazia ou nula, ou quando a finalidade é inválida.
+        */
         public async Task<CategoryResponse> Execute(CategorySaveRequest category)
         {
             var validation = new ValidationResult();

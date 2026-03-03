@@ -33,6 +33,7 @@ namespace WebApplication1.Controllers
             _reportTransaction = reportTransaction;
         }
 
+        // Método para criar uma nova pessoa
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] PersonSaveRequest request)
         {
@@ -40,6 +41,7 @@ namespace WebApplication1.Controllers
             return Created(string.Empty, response);
         }
 
+        // Método para obter todas as pessoas
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -47,6 +49,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        // Método para obter uma pessoa por ID
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
@@ -54,6 +57,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
+        // Método para atualizar uma pessoa existente
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] PersonUpdateRequest request)
         {
@@ -61,6 +65,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        // Método para deletar uma pessoa por ID e todas as suas transações associadas
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
@@ -68,6 +73,7 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        // Método para buscar o relatório de transações por pessoa
         [HttpGet("report-transaction")]
         public async Task<IActionResult> GetReportTransaction()
         {

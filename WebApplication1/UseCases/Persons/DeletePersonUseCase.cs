@@ -23,6 +23,12 @@ namespace WebApplication1.UseCases.Persons
             _context = context;
         }
 
+        /* 
+         * Objetivo: Excluir uma pessoa do sistema, juntamente com todas as transações associadas a ela.
+         * 
+         * @param id: O identificador único da pessoa a ser excluída.
+         * @throws InputException: Lançada quando a pessoa informada não existe ou quando ocorre uma falha ao tentar remover a pessoa.
+        */
         public async Task Execute(Guid id)
         {
             var validation = new ValidationResult();

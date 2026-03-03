@@ -25,6 +25,13 @@ namespace WebApplication1.UseCases.Transactions
             _repositoryPerson = repositoryPerson;
         }
 
+        /*
+         * Objetivo: Atualizar uma transação existente.
+         * 
+         * @param id: Identificador da transação a ser atualizada.
+         * @param req: Objeto contendo os dados para atualização da transação.
+         * @throws InputException: Lançada quando os dados de entrada são inválidos, quando a categoria e a pessoa relacionadas a transação não são encontradas, quando o valor(amout) é menor que zero, quando o tipo escolhido não é válido, quando sua descrição está vazia ou nula, quando o tipo da categoria não bate com o tipo da transação ou quando um menor de idade estiver tentando cadastrar uma receita.
+         */
         public async Task Execute(Guid id, TransactionUpdateRequest req)
         {
             var validation = new ValidationResult();

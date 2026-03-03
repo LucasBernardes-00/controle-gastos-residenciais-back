@@ -15,6 +15,13 @@ namespace WebApplication1.UseCases.Persons
             _repository = repository;
         }
 
+        /* 
+         * * Objetivo: Obter os detalhes de uma pessoa específica com base no seu identificador único
+         * 
+         * @param id: O identificador único da pessoa a ser recuperada
+         * @return: Um objeto PersonResponse contendo os detalhes da pessoa, ou uma exceção InputException se a pessoa não for encontrada7
+         * @throws InputException: Lançada quando a pessoa com o identificador fornecido não é encontrada no repositório
+        */
         public async Task<PersonResponse> Execute(Guid id)
         {
             var validation = new ValidationResult();

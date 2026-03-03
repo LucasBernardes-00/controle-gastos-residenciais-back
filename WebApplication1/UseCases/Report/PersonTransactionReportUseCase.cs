@@ -12,6 +12,7 @@ namespace WebApplication1.UseCases.Report
             _repository = repository;
         }
 
+        // Esse método executa a lógica para gerar o relatório de transações por pessoa, utilizando o repositório para obter os dados necessários.
         public async Task<List<PersonBalance>> Execute()
         {
             return await _repository.ReportWithTransactions();

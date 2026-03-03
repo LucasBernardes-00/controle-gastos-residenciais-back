@@ -16,6 +16,14 @@ namespace WebApplication1.UseCases.Persons
             _repository = repository;
         }
 
+        /*
+         * Objetivo: Atualizar os detalhes de uma pessoa existente no sistema, garantindo que os dados fornecidos sejam válidos e que a pessoa exista.
+         * 
+         * @param id: O identificador único da pessoa a ser atualizada.
+         * @param person: Um objeto PersonUpdateRequest contendo os novos detalhes da pessoa, como nome e data de nascimento.
+         * @return: Um objeto PersonResponse contendo os detalhes atualizados da pessoa.
+         * @throws InputException: Lançada quando a pessoa com o identificador fornecido não é encontrada ou quando os dados fornecidos para atualização são inválidos.
+        */
         public async Task<PersonResponse> Execute(Guid id, PersonUpdateRequest person)
         {
             var validation = new ValidationResult();

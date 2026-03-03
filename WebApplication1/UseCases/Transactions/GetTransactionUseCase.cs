@@ -14,6 +14,11 @@ namespace WebApplication1.UseCases.Transactions
             _repository = repository;
         }
 
+        /* Objetivo: Obter os detalhes de uma transação específica.
+         *
+         * @param id: Identificado usado para buscar a transação desejada.
+         * @throws InputException: Lançada quando a transação informada não existe.
+         */
         public async Task<TransactionResponse> Execute(Guid id)
         {
             var validation = new ValidationResult();
