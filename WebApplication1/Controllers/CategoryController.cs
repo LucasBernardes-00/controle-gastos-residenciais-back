@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
             return Created(string.Empty, response);
         }
 
-        ´// Método para obter todas as categorias
+        // Método para obter todas as categorias
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -58,7 +58,7 @@ namespace WebApplication1.Controllers
             return Ok(result);
         }
 
-        ´// Método para atualizar uma categoria existente
+        // Método para atualizar uma categoria existente
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] CategoryUpdateRequest request)
         {
